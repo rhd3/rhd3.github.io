@@ -5,10 +5,11 @@ permalink: posts
 
 <section>
   <h1>Posts</h1>
+
 </section>
 
 <section>
-  <h2>{{%site.posts | size%}} posts</h2>
+  <h2>게시글 {{%site.posts | size%}} 개</h2>
   <hr/>
   <script>
       const selectIndex = (totalIndex, selectingNumber) => {
@@ -26,10 +27,19 @@ permalink: posts
       let v = selectIndex(700,{{site.posts | size}})
       var date = new Date();
   </script>
-  {% for post in paginator.posts %} {% assign nth = forloop.index0 | modulo:2 %}
+  {% for post in site.posts %} {% assign nth = forloop.index0 | modulo:2 %}
   <div class="media t-hackcss-media">
     {% if nth == 0 %}
     <div class="t-hackcss-media-shift media-left">
+      <img
+        class="t-hackcss-media-image"
+        src="{{ post.image_preview }}"
+        alt="{{ post.title }}"
+        title="{{ post.title }}"
+        id="img-{{forloop.index0}}"
+        width="36px"
+        height="56px"
+      />
     </div>
 
     {% endif %}
@@ -64,33 +74,20 @@ permalink: posts
 
     {% if nth == 1 %}
     <div class="t-hackcss-media-shift media-right">
-
+      <img
+        class="t-hackcss-media-image"
+        src="{{ post.image_preview }}"
+        alt="{{ post.title }}"
+        style="transform: scaleX(-1)"
+        title="{{ post.title }}"
+        id="img-{{forloop.index0}}"
+        width="36px"
+        height="56px"
+      />
     </div>
     {% endif %}
   </div>
   <hr/>
   {% endfor %}
 
-  <div class="pagination">
-    {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}" class="prev">Previous</a>
-    {% endif %}
-    {% for page in (1..paginator.total_pages) %}
-      <a href="{{ paginator.page_path: page }}" class="{% if page == paginator.page %}active{% endif %}">{{ page }}</a>
-    {% endfor %}
-    {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}" class="next">Next</a>
-    {% endif %}
-  </div>
-
 </section>
-<script src="default.js"></script>
-<script>
-  console.log(a)
-  console.log(v)
-    for(var i = 0; i<{{%site.posts | size%}}; i++){
-      if(a[v[i]]==undefined)document.getElementById("img-"+i).src= "https://raw.githubusercontent.com/Seo-Faper/cq_assets/master/heroes/cos_ar_7_15.png?"+ date.getTime()
-  else document.getElementById("img-"+i).src= "https://raw.githubusercontent.com/Seo-Faper/cq_assets/master/heroes/"+a[v[i]]+
-  "?"+ date.getTime()
-    }
-</script>

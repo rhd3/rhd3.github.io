@@ -7,7 +7,7 @@
 
 # Site settings
 title: rhd3's blog!
-description: A minimalistic theme for Jekyll, based on hack.css
+description: 집에 가고 싶어요
 repository: https://github.com/rhd3/rhd3.github.io/
 baseurl: / # the subpath of your site, e.g. /blog
 url: https://rhd3.github.io  # the base hostname & protocol for your site
@@ -23,8 +23,8 @@ sass:
 theme_mode: markdown  # choices are: 'dark', 'standard', 'markdown'
 
 # Customizations
-your_name: wemake.services
-email: mail@sobolevn.me
+your_name: rhd3
+email: krud03@naver.com
 
 navigation:
   - text: Home
@@ -33,7 +33,9 @@ navigation:
     url: /docs
   - text: Examples
     url: /examples
-
+  - text: Posts
+    url: /posts
+    
 projects:
   - name: git-secret
     description: A bash-tool to store your private data inside a git repository.

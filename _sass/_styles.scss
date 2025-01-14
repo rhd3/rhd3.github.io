@@ -115,3 +115,6 @@ blockquote {
   color: #666;
 }
 
+blockquote::before {
+  content: "";
+}

@@ -21,7 +21,9 @@ permalink: posts
       </strong>
       <p>{{ post.short_description }}</p>
       <p><small>{{ post.categories }} / {{ post.date | date: "%Y-%m-%d" }}</small></p>
+      {% unless forloop.last %}
       <hr/>
+      {% endunless %}
     </div>
   {% endfor %}
 </section>

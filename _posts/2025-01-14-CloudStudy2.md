@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 도커의 개요 및 설치2
-date: 2025-01-14 12:38:23
+date: 2025-01-14
 categories: CloudStudy
 short_description: 클라우드 스터디 1회차
 ---

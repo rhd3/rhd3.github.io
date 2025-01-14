@@ -44,7 +44,7 @@ OS: Rocky Linux 8.10
 ```
 &#35; dnf install docker-ce
 ```
-7. 버전확인
+4. 설치 확인
 ```
 &#35; docker version
 ```   

@@ -5,89 +5,70 @@ permalink: posts
 
 <section>
   <h1>Posts</h1>
-
+  <h2>{{ site.posts | size }} posts</h2>
+  <hr/>
 </section>
 
 <section>
-  <h2>게시글 {{%site.posts | size%}} 개</h2>
-  <hr/>
-  <script>
-      const selectIndex = (totalIndex, selectingNumber) => {
-        let randomIndexArray = []
-        for (i=0; i<selectingNumber; i++) {   //check if there is any duplicate index
-          randomNum = Math.floor(Math.random() * totalIndex)
-          if (randomIndexArray.indexOf(randomNum) === -1) {
-            randomIndexArray.push(randomNum)
-          } else { //if the randomNum is already in the array retry
-            i--
-          }
-        }
-        return randomIndexArray
-    };
-      let v = selectIndex(700,{{site.posts | size}})
-      var date = new Date();
-  </script>
-  {% for post in site.posts %} {% assign nth = forloop.index0 | modulo:2 %}
-  <div class="media t-hackcss-media">
-    {% if nth == 0 %}
-    <div class="t-hackcss-media-shift media-left">
-      <img
-        class="t-hackcss-media-image"
-        src="{{ post.image_preview }}"
-        alt="{{ post.title }}"
-        title="{{ post.title }}"
-        id="img-{{forloop.index0}}"
-        width="36px"
-        height="56px"
-      />
-    </div>
-
-    {% endif %}
-
-    <div class="media-body">
-      <div class="media-heading">
-        <span
-          >
+  {% assign posts_per_page = 10 %} <!-- 한 페이지에 표시할 게시글 수 -->
+  {% assign total_pages = site.posts | size | divided_by: posts_per_page | ceil %}
+  {% assign current_page = page.page | default: 1 %}
+  
+  {% assign start_index = posts_per_page | times: current_page | minus: posts_per_page %}
+  {% assign end_index = start_index | plus: posts_per_page %}
+  
+  {% for post in site.posts %}
+    {% if forloop.index > start_index and forloop.index <= end_index %}
+      <div>
+        <h3>
           {% if post.external_url %}
-          <a
-            href="{{ post.external_url }}"
-            target="_blank"
-            title="{{ project.name }}"
-          >
-            {{ post.title }}
-          </a>
+          <a href="{{ post.external_url }}" target="_blank">{{ post.title }}</a>
           {% else %}
-          <a
-            href="{{ post.url | prepend: site.baseurl }}"
-            title="{{ project.name }}"
-          >
-            {{ post.title }}
-          </a>
+          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
           {% endif %}
-        </span>
+        </h3>
+        <p>{{ post.short_description }}</p>
+        <p><small>{{ post.categories }} / {{ post.date | date: "%Y-%m-%d" }}</small></p>
+        <hr/>
       </div>
-      <div class="media-content">{{ post.short_description }}
-        <br><span> {{post.categories}} / {{ post.date | date: "%Y-%m-%d" }} </span>
-      </div>
-
-    </div>
-
-    {% if nth == 1 %}
-    <div class="t-hackcss-media-shift media-right">
-      <img
-        class="t-hackcss-media-image"
-        src="{{ post.image_preview }}"
-        alt="{{ post.title }}"
-        style="transform: scaleX(-1)"
-        title="{{ post.title }}"
-        id="img-{{forloop.index0}}"
-        width="36px"
-        height="56px"
-      />
-    </div>
     {% endif %}
-  </div>
-  <hr/>
   {% endfor %}
+</section>
 
+<section>
+  <nav>
+    <ul style="list-style: none; display: flex; justify-content: center; padding: 0;">
+      {% if current_page > 1 %}
+      <li style="margin: 0 5px;">
+        <a href="{{ site.baseurl }}/posts?page={{ current_page | minus: 1 }}">이전</a>
+      </li>
+      {% endif %}
+      
+      {% assign max_pages_to_show = 5 %}
+      {% assign start_page = current_page | minus: 2 | at_least: 1 %}
+      {% assign end_page = start_page | plus: max_pages_to_show | at_most: total_pages %}
+      
+      {% for page_num in (start_page..end_page) %}
+      <li style="margin: 0 5px;">
+        {% if page_num == current_page %}
+        <span>{{ page_num }}</span>
+        {% else %}
+        <a href="{{ site.baseurl }}/posts?page={{ page_num }}">{{ page_num }}</a>
+        {% endif %}
+      </li>
+      {% endfor %}
+      
+      {% if current_page < total_pages %}
+      <li style="margin: 0 5px;">
+        <a href="{{ site.baseurl }}/posts?page={{ current_page | plus: 1 }}">다음</a>
+      </li>
+      {% endif %}
+      
+      {% if end_page < total_pages %}
+      <li style="margin: 0 5px;">
+        <a href="{{ site.baseurl }}/posts?page={{ end_page | plus: 1 }}">></a>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
 </section>

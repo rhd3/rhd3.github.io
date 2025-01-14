@@ -118,3 +118,7 @@ blockquote {
 blockquote::before {
   content: "";
 }
+
+blockquote::after {
+  content: "";
+}

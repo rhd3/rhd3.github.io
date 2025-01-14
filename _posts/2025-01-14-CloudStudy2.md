@@ -27,18 +27,19 @@ OS: Rocky Linux 8.10
 새로 설치하기 위해선 기존에 깔려잇는 도커를 제거해야함. 
 
 1. 명령어 설치
-2. 패키지 db 업데이트 및 확인 진행
+패키지 db 업데이트 및 확인 진행
 
-3./ # dnf check-update
-4. # dnf update /
+&#35; dnf check-update
+&#35; dnf update 
 
-5.  Docker의 CentOS(Rocky Linux) 전용 저장소(repository)를 추가
+
+Docker의 CentOS(Rocky Linux) 전용 저장소(repository)를 추가
     # dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 
 6. docker-ce 패키지 설치
-   # dnf install docker-ce
+   &#35; dnf install docker-ce
 7. 버전확인
-   #docker version
+   &#35; docker version
 
 
 

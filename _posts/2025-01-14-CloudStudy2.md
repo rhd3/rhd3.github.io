@@ -32,27 +32,31 @@ OS: Rocky Linux 8.10
 ### 2.1.2.1 명령어 설치
 1. 패키지 db 업데이트 및 확인 진행
 ```
-&#35; dnf check-update    
-&#35; dnf update    
+# dnf check-update    
+# dnf update    
 ```
 
 2. Docker의 CentOS(Rocky Linux) 전용 저장소(repository)를 추가
 ```
-&#35; dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+# dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 ```
 3. docker-ce 패키지 설치
 ```
-&#35; dnf install docker-ce
+# dnf install docker-ce
 ```
 4. 설치 확인
 ```
-&#35; docker version
+# docker version
 ```   
 
 ### 2.1.2.2 스크립트를 사용한 설치
+1. 스크립트 다운로드
 ```
-&#35; curl -fsSL https://get.docker.com -o get-docker.sh
-&#35; sh get-docker.sh
+# curl -fsSL https://get.docker.com -o get-docker.sh
+```
+2. 스크립트 실행
+```
+# sh get-docker.sh
 ```
 
 

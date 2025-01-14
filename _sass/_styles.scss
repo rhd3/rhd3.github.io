@@ -116,9 +116,9 @@ blockquote {
 }
 
 blockquote::before {
-  content: "";
+  content: none;
 }
 
 blockquote::after {
-  content: "";
+  content: none;
 }

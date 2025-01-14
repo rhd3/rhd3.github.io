@@ -122,18 +122,3 @@ blockquote::before {
 blockquote::after {
   content: none;
 }
-
-.t-hackcss-navigation {
-  position: fixed;
-  top: 0;
-}
-
-.post {
-  margin-left: 250px; /* 좌측 네비게이션의 너비에 맞게 조정 */
-}
-
-.t-hackcss-navigation {
-  position: fixed;
-  top: 0;
-  width: 250px; /* 좌측 네비게이션의 너비에 맞게 조정 */
-}

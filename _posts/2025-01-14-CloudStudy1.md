@@ -49,9 +49,6 @@ short_description: 클라우드 스터디 1회차
 
 
 
-'
-
-
 
 
 

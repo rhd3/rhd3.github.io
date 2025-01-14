@@ -5,54 +5,110 @@ permalink: posts
 
 <section>
   <h1>Posts</h1>
-
-  <p>
-    All Posts
-  </p>
 </section>
 
 <section>
-  <h2> {{%site.posts | size%}} Posts</h2>
-
-  {% for post in site.posts %}
-    {% assign nth = forloop.index0 | modulo:2 %}
-    <div class="media t-hackcss-media">
-
-      {% if nth == 0 %}
-      <div class="t-hackcss-media-shift media-left">
-        <img class="t-hackcss-media-image"
-             src="{{ post.image_preview }}" alt="{{ post.title }}"
-             title="{{ post.title }}" />
-      </div>
-      {% endif %}
-
-      <div class="media-body">
-        <div class="media-heading">
-          <span>{{ post.date | date_to_string }} &raquo;
-            {% if post.external_url %}
-              <a href="{{ post.external_url }}" target="_blank" title="{{ project.name }}">
-                {{ post.title }}
-              </a>
-            {% else %}
-              <a href="{{ post.url | prepend: site.baseurl }}" title="{{ project.name }}">
-                {{ post.title }}
-              </a>
-            {% endif %}
-          </span>
-        </div>
-        <div class="media-content">
-          {{ post.short_description }}
-        </div>
-      </div>
-
-      {% if nth == 1 %}
-      <div class="t-hackcss-media-shift media-right">
-        <img class="t-hackcss-media-image"
-             src="{{ post.image_preview }}" alt="{{ post.title }}"
-             title="{{ post.title }}" />
-      </div>
-      {% endif %}
+  <h2>게시글 {{%site.posts | size%}} 개</h2>
+  <hr/>
+  <script>
+      const selectIndex = (totalIndex, selectingNumber) => {
+        let randomIndexArray = []
+        for (i=0; i<selectingNumber; i++) {   //check if there is any duplicate index
+          randomNum = Math.floor(Math.random() * totalIndex)
+          if (randomIndexArray.indexOf(randomNum) === -1) {
+            randomIndexArray.push(randomNum)
+          } else { //if the randomNum is already in the array retry
+            i--
+          }
+        }
+        return randomIndexArray
+    };
+      let v = selectIndex(700,{{site.posts | size}})
+      var date = new Date();
+  </script>
+  {% for post in paginator.posts %} {% assign nth = forloop.index0 | modulo:2 %}
+  <div class="media t-hackcss-media">
+    {% if nth == 0 %}
+    <div class="t-hackcss-media-shift media-left">
+      <img
+        class="t-hackcss-media-image"
+        src="{{ post.image_preview }}"
+        alt="{{ post.title }}"
+        title="{{ post.title }}"
+        id="img-{{forloop.index0}}"
+        width="36px"
+        height="56px"
+      />
     </div>
-  {% endfor %}
-</section>
 
+    {% endif %}
+
+    <div class="media-body">
+      <div class="media-heading">
+        <span
+          >
+          {% if post.external_url %}
+          <a
+            href="{{ post.external_url }}"
+            target="_blank"
+            title="{{ project.name }}"
+          >
+            {{ post.title }}
+          </a>
+          {% else %}
+          <a
+            href="{{ post.url | prepend: site.baseurl }}"
+            title="{{ project.name }}"
+          >
+            {{ post.title }}
+          </a>
+          {% endif %}
+        </span>
+      </div>
+      <div class="media-content">{{ post.short_description }}
+        <br><span> {{post.categories}} / {{ post.date | date: "%Y-%m-%d" }} </span>
+      </div>
+
+    </div>
+
+    {% if nth == 1 %}
+    <div class="t-hackcss-media-shift media-right">
+      <img
+        class="t-hackcss-media-image"
+        src="{{ post.image_preview }}"
+        alt="{{ post.title }}"
+        style="transform: scaleX(-1)"
+        title="{{ post.title }}"
+        id="img-{{forloop.index0}}"
+        width="36px"
+        height="56px"
+      />
+    </div>
+    {% endif %}
+  </div>
+  <hr/>
+  {% endfor %}
+
+  <div class="pagination">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" class="prev">Previous</a>
+    {% endif %}
+    {% for page in (1..paginator.total_pages) %}
+      <a href="{{ paginator.page_path: page }}" class="{% if page == paginator.page %}active{% endif %}">{{ page }}</a>
+    {% endfor %}
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+    {% endif %}
+  </div>
+
+</section>
+<script src="default.js"></script>
+<script>
+  console.log(a)
+  console.log(v)
+    for(var i = 0; i<{{%site.posts | size%}}; i++){
+      if(a[v[i]]==undefined)document.getElementById("img-"+i).src= "https://raw.githubusercontent.com/Seo-Faper/cq_assets/master/heroes/cos_ar_7_15.png?"+ date.getTime()
+  else document.getElementById("img-"+i).src= "https://raw.githubusercontent.com/Seo-Faper/cq_assets/master/heroes/"+a[v[i]]+
+  "?"+ date.getTime()
+    }
+</script>

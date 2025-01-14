@@ -30,15 +30,6 @@ permalink: posts
   <div class="media t-hackcss-media">
     {% if nth == 0 %}
     <div class="t-hackcss-media-shift media-left">
-      <img
-        class="t-hackcss-media-image"
-        src="{{ post.image_preview }}"
-        alt="{{ post.title }}"
-        title="{{ post.title }}"
-        id="img-{{forloop.index0}}"
-        width="36px"
-        height="56px"
-      />
     </div>
 
     {% endif %}
@@ -73,16 +64,7 @@ permalink: posts
 
     {% if nth == 1 %}
     <div class="t-hackcss-media-shift media-right">
-      <img
-        class="t-hackcss-media-image"
-        src="{{ post.image_preview }}"
-        alt="{{ post.title }}"
-        style="transform: scaleX(-1)"
-        title="{{ post.title }}"
-        id="img-{{forloop.index0}}"
-        width="36px"
-        height="56px"
-      />
+
     </div>
     {% endif %}
   </div>
@@ -102,13 +84,3 @@ permalink: posts
   </div>
 
 </section>
-<script src="default.js"></script>
-<script>
-  console.log(a)
-  console.log(v)
-    for(var i = 0; i<{{%site.posts | size%}}; i++){
-      if(a[v[i]]==undefined)document.getElementById("img-"+i).src= "https://raw.githubusercontent.com/Seo-Faper/cq_assets/master/heroes/cos_ar_7_15.png?"+ date.getTime()
-  else document.getElementById("img-"+i).src= "https://raw.githubusercontent.com/Seo-Faper/cq_assets/master/heroes/"+a[v[i]]+
-  "?"+ date.getTime()
-    }
-</script>

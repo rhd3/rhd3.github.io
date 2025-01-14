@@ -122,3 +122,8 @@ blockquote::before {
 blockquote::after {
   content: none;
 }
+
+.t-hackcss-navigation {
+  position: fixed;
+  top: 0;
+}

@@ -10,23 +10,24 @@ permalink: posts
 </section>
 
 <section>
-  {% assign posts_per_page = 10 %} <!-- 한 페이지에 표시할 게시글 수 -->
+  {% assign posts_per_page = 10 %} 
   {% assign total_pages = site.posts | size | divided_by: posts_per_page | ceil %}
   {% assign current_page = page.page | default: 1 %}
   
+  <!-- 게시글 목록 -->
   {% assign start_index = posts_per_page | times: current_page | minus: posts_per_page %}
   {% assign end_index = start_index | plus: posts_per_page %}
   
   {% for post in site.posts %}
     {% if forloop.index > start_index and forloop.index <= end_index %}
       <div>
-        <h3>
+        <strong>
           {% if post.external_url %}
           <a href="{{ post.external_url }}" target="_blank">{{ post.title }}</a>
           {% else %}
           <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
           {% endif %}
-        </h3>
+        </strong>
         <p>{{ post.short_description }}</p>
         <p><small>{{ post.categories }} / {{ post.date | date: "%Y-%m-%d" }}</small></p>
         <hr/>
@@ -36,14 +37,17 @@ permalink: posts
 </section>
 
 <section>
+  <!-- 페이지 네비게이터 -->
   <nav>
     <ul style="list-style: none; display: flex; justify-content: center; padding: 0;">
+      <!-- 이전 페이지 -->
       {% if current_page > 1 %}
       <li style="margin: 0 5px;">
         <a href="{{ site.baseurl }}/posts?page={{ current_page | minus: 1 }}">이전</a>
       </li>
       {% endif %}
       
+      <!-- 페이지 번호 -->
       {% assign max_pages_to_show = 5 %}
       {% assign start_page = current_page | minus: 2 | at_least: 1 %}
       {% assign end_page = start_page | plus: max_pages_to_show | at_most: total_pages %}
@@ -58,12 +62,14 @@ permalink: posts
       </li>
       {% endfor %}
       
+      <!-- 다음 페이지 -->
       {% if current_page < total_pages %}
       <li style="margin: 0 5px;">
         <a href="{{ site.baseurl }}/posts?page={{ current_page | plus: 1 }}">다음</a>
       </li>
       {% endif %}
       
+      <!-- 다음 5페이지 -->
       {% if end_page < total_pages %}
       <li style="margin: 0 5px;">
         <a href="{{ site.baseurl }}/posts?page={{ end_page | plus: 1 }}">></a>

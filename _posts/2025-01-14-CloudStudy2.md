@@ -1,3 +1,11 @@
+---
+layout: post
+title: 도커의 개요 및 설치2
+date: 2025-01-14 12:40:22
+categories: CloudStudy
+short_description: 클라우드 스터디 1회차
+---
+
 ## 2.1 Docker 설치
 ### 2.1.1 사전 준비
 도커를 설치하는 방법은 도커 데스크톱(Docker Desktop)을 이용하는 방법과 리눅스 시스템에 직접 설치하는 두가지 방법이 있다.

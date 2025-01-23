@@ -13,6 +13,7 @@ Docker 이미지: node:16
   <p align="center">
      <img src = "img/docker_search.png">
   </p>
+  ----------
 2. Docker 컨테이너 생성
   <p align="center">
     <img src = "img/docker_create.png">
@@ -23,11 +24,13 @@ Docker 이미지: node:16
 -w: 컨테이너 내부의 작업 디렉토리 지정         
 -p: 컨테이너의 3000번 포트를 호스트의 3000번 포트와 매핑     
 ```
+--------
 3. 컨테이너 실행    
   <p align="center">
     <img src = "img/docker_run.png">
   </p>
 Docker 볼륨을 컨테이너에 마운트 후 실행   
+---------
 4. 실행 결과
   <p align="center">
     <img src = "img/docker_run.png">

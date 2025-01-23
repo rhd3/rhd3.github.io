@@ -5,7 +5,7 @@ date: 2025-01-23
 categories: CloudStudy
 short_description: 클라우드 스터디 2회차
 ---
-
+    
 # 1. Docker 이미지 관리
 ## 주요 명령어
 - 이미지 검색:

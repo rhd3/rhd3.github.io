@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 도커 이미지, 컨테이너, 볼륨 관리
-date: 2025-01-14
+date: 2025-01-23
 categories: CloudStudy
 short_description: 클라우드 스터디 2회차
 ---

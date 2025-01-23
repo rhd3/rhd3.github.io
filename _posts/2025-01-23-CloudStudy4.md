@@ -10,7 +10,7 @@ OS: Rocky Linux 8
 Docker 이미지: node:16   
 
 1. node 이미지를 검색 후 다운로드   
-![docker_search]({{ site.baseurl }}/img/docker_search.png)   
+![docker_search](./img/docker_search.png)   
 
 
 

@@ -5,20 +5,15 @@ date: 2025-01-23
 categories: CloudStudy
 short_description: 클라우드 스터디 2회차
 ---
-
-![docker_search](./img/docker_search.png)
+   
 OS: Rocky Linux 8   
 Docker 이미지: node:16   
 
 1. node 이미지를 검색 후 다운로드
-<p align="center">
-    <img src = "./img/docker_search.png">
-</p>   
+![docker_search](./img/docker_search.png)   
 --------
 2. Docker 컨테이너 생성
-<p align="center">
-    <img src = "./img/docker_create.png">
-</p>   
+![docker_create](./img/docker_create.png)   
 
 ```
 --name: 컨테이너의 이름을 지정         
@@ -28,14 +23,13 @@ Docker 이미지: node:16
 ```
 
 --------
-
 3. 컨테이너 실행
-<p align="center">
-    <img src = "./img/docker_run.png">
-</p>
-Docker 볼륨을 컨테이너에 마운트 후 실행   
+![docker_run](./img/docker_run.png)   
+Docker 볼륨을 컨테이너에 마운트 후 실행
+
 --------
-4. 실행 결과
-<p align="center">
-    <img src = "./img/docker_run.png">
-</p>
+4. ps 확인
+![docker_ps_after_run](./img/docker_ps_after_run.png)   
+--------
+5. 실행 결과
+![tlfgod](./img/tlfgod.png)

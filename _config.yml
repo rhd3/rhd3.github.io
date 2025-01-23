@@ -9,7 +9,7 @@
 title: rhd3's blog!
 description: I want to go home...
 repository: https://github.com/rhd3/rhd3.github.io/
-baseurl: / # the subpath of your site, e.g. /blog
+baseurl: # the subpath of your site, e.g. /blog
 url: https://rhd3.github.io  # the base hostname & protocol for your site
 
 # Build settings

@@ -13,7 +13,7 @@ Docker 이미지: node:16
 <p align="center">
     <img src = "img/docker_search.png">
 </p>
-----------
+--------
 2. Docker 컨테이너 생성
 <p align="center">
     <img src = "img/docker_create.png">
@@ -33,7 +33,7 @@ Docker 이미지: node:16
     <img src = "img/docker_run.png">
 </p>
 Docker 볼륨을 컨테이너에 마운트 후 실행   
----------
+--------
 4. 실행 결과
 <p align="center">
     <img src = "img/docker_run.png">

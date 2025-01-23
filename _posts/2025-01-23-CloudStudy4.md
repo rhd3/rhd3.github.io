@@ -5,18 +5,19 @@ date: 2025-01-23
 categories: CloudStudy
 short_description: 클라우드 스터디 2회차
 ---
-    
+
+![docker_search](./docker_search.png)
 OS: Rocky Linux 8   
 Docker 이미지: node:16   
 
 1. node 이미지를 검색 후 다운로드
 <p align="center">
-    <img src = "img/docker_search.png">
+    <img src = "./img/docker_search.png">
 </p>   
 --------
 2. Docker 컨테이너 생성
 <p align="center">
-    <img src = "img/docker_create.png">
+    <img src = "./img/docker_create.png">
 </p>   
 
 ```
@@ -30,11 +31,11 @@ Docker 이미지: node:16
 
 3. 컨테이너 실행
 <p align="center">
-    <img src = "img/docker_run.png">
+    <img src = "./img/docker_run.png">
 </p>
 Docker 볼륨을 컨테이너에 마운트 후 실행   
 --------
 4. 실행 결과
 <p align="center">
-    <img src = "img/docker_run.png">
+    <img src = "./img/docker_run.png">
 </p>

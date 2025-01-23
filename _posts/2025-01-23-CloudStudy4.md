@@ -12,7 +12,7 @@ Docker 이미지: node:16
 1. node 이미지를 검색 후 다운로드
 <p align="center">
     <img src = "img/docker_search.png">
-</p>
+</p>   
 --------
 2. Docker 컨테이너 생성
 <p align="center">

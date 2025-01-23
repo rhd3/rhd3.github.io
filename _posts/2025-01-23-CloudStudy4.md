@@ -6,7 +6,7 @@ categories: CloudStudy
 short_description: 클라우드 스터디 2회차
 ---
 
-![docker_search](./docker_search.png)
+![docker_search](./img/docker_search.png)
 OS: Rocky Linux 8   
 Docker 이미지: node:16   
 

@@ -6,10 +6,13 @@ categories: CloudStudy
 short_description: 클라우드 스터디 2회차
 ---
 
-
-
 # 1. Docker 이미지 관리
 ## 주요 명령어
+- 이미지 검색:
+  ```
+  #docker search
+  ```
+
 - 이미지 다운로드:
   ```
   #docker pull node:16
@@ -33,16 +36,12 @@ short_description: 클라우드 스터디 2회차
 
 - 컨테이너 생성:
   ```
-  #docker create --name chat-app -v $(pwd):/usr/src/app -w /usr/src/app -p 3000:3000 node:16
+  #docker create
   ```
-    --name: 컨테이너의 이름을 지정   
-    -v: 로컬 디렉토리를 컨테이너 내부 디렉토리와 바인드 마운트   
-    -w: 컨테이너 내부의 작업 디렉토리 지정   
-    -p: 컨테이너의 3000번 포트를 호스트의 3000번 포트와 매핑   
 
 - 컨테이너 실행:
   ```
-  #docker run -a chat-app
+  #docker run
   ```
     생성된 컨테이너를 실행
 
@@ -65,6 +64,12 @@ short_description: 클라우드 스터디 2회차
     ```
   모든 컨테이너(실행 중, 중지 상태 포함)를 확인
 
+ - 컨테이너 로그
+    ```
+    docker logs [containerID]
+    ```
+    컨테이너에서 입력한 내용이 json 파일 형식으로 저장되어 있음
+
 # 3. Docker 볼륨 관리
 도커에서 컨테이너가 호스트 시스템에 파일을 저장할 수 있는 여러가지 방법이 있고, 대표적으로 볼륨, 바인드 마운트 등이 있다.    
 
@@ -77,18 +82,18 @@ short_description: 클라우드 스터디 2회차
 |컨테이너 간 공유  | 파일 공유는 가능하지만, 명시적으로 경로 지정 필요 | 컨테이너 간 데이터 공유가 간단           | 
 |데이터 보존       | 컨테이너 삭제 시 파일 보존                      | 컨테이너 삭제 후에도 볼륨 데이터 유지     | 
 
+볼륨에는 별도의 이름이나 식별자 없이 도커에 의해 자동으로 생성되는 익명 볼륨과 볼륨의 이름을 직접 지정하는 명명볼륨이 있다.   
+
 ## 주요 볼륨 명령어
 - 볼륨 생성:
   ```
-  #docker volume create chat-app-volume
+  #docker volume create 
   ```
-    chat-app-volume이라는 이름의 Docker 볼륨을 생성
 
 - 볼륨 사용:
   ```
-  #docker run -it -v chat-app-volume:/usr/src/app -p 3000:3000 node:16
+  #docker run -v [볼륨 이름]:[컨테이너 내부 경로] [이미지 이름]
   ```
-    Docker 볼륨(/usr/src/app)을 컨테이너에 마운트
 
 - 볼륨 확인:
   ```
@@ -98,13 +103,13 @@ short_description: 클라우드 스터디 2회차
 
 - 볼륨 삭제:
   ```
-  #docker volume rm chat-app-volume
+  #docker volume rm
   ```
     사용하지 않는 볼륨을 삭제
 
 - 볼륨 데이터 확인:
 ```
-#docker inspect chat-app-volume
+#docker inspect 
 ```
     볼륨의 상세 정보와 저장 경로를 확인
 

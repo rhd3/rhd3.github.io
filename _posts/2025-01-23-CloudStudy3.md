@@ -112,6 +112,3 @@ short_description: 클라우드 스터디 2회차
 #docker inspect 
 ```
     볼륨의 상세 정보와 저장 경로를 확인
-
-
-

@@ -11,9 +11,8 @@ Docker 이미지: node:16
 
 1. node 이미지를 검색 후 다운로드   
 ![docker_search](./img/docker_search.png)   
-image: https://github.com/rhd3/rhd3.github.io/blob/main/_posts/img/docker_search.png
-
-
+![](https://github.com/rhd3/rhd3.github.io/blob/main/_posts/img/docker_search.png)
+![](https://raw.githubusercontent.com/rhd3/rhd3.github.io/main/_posts/img/docker_search.png)
 
 3. Docker 컨테이너 생성
 ![docker_create](./img/docker_create.png)     

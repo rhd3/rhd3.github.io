@@ -11,6 +11,7 @@ Docker 이미지: node:16
 
 1. node 이미지를 검색 후 다운로드   
 ![docker_search](./img/docker_search.png)   
+image: ./img/docker_search.png
 
 
 

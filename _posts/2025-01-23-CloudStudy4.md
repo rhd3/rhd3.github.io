@@ -10,12 +10,10 @@ OS: Rocky Linux 8
 Docker 이미지: node:16   
 
 1. node 이미지를 검색 후 다운로드   
-![docker_search](./img/docker_search.png)   
-![](https://github.com/rhd3/rhd3.github.io/blob/main/_posts/img/docker_search.png)
 ![](https://raw.githubusercontent.com/rhd3/rhd3.github.io/main/_posts/img/docker_search.png)
 
 3. Docker 컨테이너 생성
-![docker_create](./img/docker_create.png)     
+![](https://raw.githubusercontent.com/rhd3/rhd3.github.io/main/_posts/img/docker_create.png)
 
 ```
 --name: 컨테이너의 이름을 지정         
@@ -26,12 +24,12 @@ Docker 이미지: node:16
 
 
 3. 컨테이너 실행
-![docker_run](./img/docker_run.png)    
+![](https://raw.githubusercontent.com/rhd3/rhd3.github.io/main/_posts/img/docker_run.png)
 Docker 볼륨을 컨테이너에 마운트 후 실행
 
 4. ps 확인
-![docker_ps_after_run](./img/docker_ps_after_run.png)    
+![](https://raw.githubusercontent.com/rhd3/rhd3.github.io/main/_posts/img/docker_ps_after_run.png)
 
 
 5. 실행 결과
-![tlfgod](./img/tlfgod.png)   
+![](https://raw.githubusercontent.com/rhd3/rhd3.github.io/main/_posts/img/tlfgod.png)

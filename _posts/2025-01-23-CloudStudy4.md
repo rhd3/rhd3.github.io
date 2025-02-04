@@ -8,11 +8,11 @@ short_description: 클라우드 스터디 2회차
    
 OS: Rocky Linux 8   
 Docker 이미지: node:16   
-
-1. node 이미지를 검색 후 다운로드   
+ 
+1. node 이미지를 검색 후 다운로드       
 ![](https://raw.githubusercontent.com/rhd3/rhd3.github.io/main/_posts/img/docker_search.png)
 
-3. Docker 컨테이너 생성
+3. Docker 컨테이너 생성      
 ![](https://raw.githubusercontent.com/rhd3/rhd3.github.io/main/_posts/img/docker_create.png)
 
 ```
@@ -23,13 +23,13 @@ Docker 이미지: node:16
 ```
 
 
-3. 컨테이너 실행
-![](https://raw.githubusercontent.com/rhd3/rhd3.github.io/main/_posts/img/docker_run.png)
+3. 컨테이너 실행      
+![](https://raw.githubusercontent.com/rhd3/rhd3.github.io/main/_posts/img/docker_run.png)      
 Docker 볼륨을 컨테이너에 마운트 후 실행
 
-4. ps 확인
+4. ps 확인      
 ![](https://raw.githubusercontent.com/rhd3/rhd3.github.io/main/_posts/img/docker_ps_after_run.png)
 
 
-5. 실행 결과
+5. 실행 결과     
 ![](https://raw.githubusercontent.com/rhd3/rhd3.github.io/main/_posts/img/tlfgod.png)

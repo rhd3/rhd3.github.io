@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 네트워크 관리
-date: 2025-01-23
+date: 2025-02-04
 categories: CloudStudy
 short_description: 클라우드 스터디 3회차
 ---

@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 도커 이미지, 컨테이너, 볼륨 관리
+title: 도커 이미지 레이어
 date: 2025-02-05
 categories: CloudStudy
-short_description: 클라우드 스터디 2회차
+short_description: 도커의 이미지 레이어란?
 ---
     
 

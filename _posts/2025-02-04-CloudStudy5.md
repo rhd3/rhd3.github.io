@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 리소스 제한 및 모니터링하기
-date: 2025-01-23
+date: 2025-02-04
 categories: CloudStudy
 short_description: 클라우드 스터디 3회차
 ---
